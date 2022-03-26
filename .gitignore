@@ -1,0 +1,7 @@
+# git ignore
+
+# vscode
+.vscode
+
+# vim
+**/*.swp
