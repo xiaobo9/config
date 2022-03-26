@@ -1,0 +1,31 @@
+[winUpdater]
+	recentlySeenVersion = 2.22.0.windows.1
+[credential]
+	helper = manager
+[alias]
+	ffs = flow feature start
+	fbs = flow bugfix start
+	st = status
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<author: %an> <commiter: %cn>%Creset' --abbrev-commit
+
+
+    graph = log --oneline --graph --decorate
+	ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+	ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+	lds = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
+	conflicts = diff --name-only --diff-filter=U
+	local-branches = !git branch -vv | cut -c 3- | awk '$3 !~/\\[/ { print $1 }'
+	recent-branches = !git branch --sort=-committerdate | head
+	authors = !git log --format='%aN <%aE>' | grep -v 'users.noreply.github.com' | sort -u --ignore-case
+	gl = config --global -l
+	se = !git rev-list --all | xargs git grep -F
+[user]
+	email = renxiaobo9@gmail.com
+	name = renxb
+[filesystem "Oracle Corporation|1.8.0_40|2055345623"]
+	timestampResolution = 1001 microseconds
+	minRacyThreshold = 0 nanoseconds
+[https]
+	proxy = socks5://127.0.0.1:1080
+[http]
+	proxy = socks5://127.0.0.1:1080
